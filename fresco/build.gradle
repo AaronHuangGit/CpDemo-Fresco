@@ -1,0 +1,43 @@
+apply from: 'http://championai.com/android/gradle/commonLibrary.gradle'
+apply plugin: 'kotlin-kapt'
+
+android {
+    defaultConfig {
+        if (isDevelop) {
+            applicationId rootProject.ext.android.frescoApplicationId
+        }
+    }
+//    sourceSets {
+//        main {
+//            if (rootProject.ext.isAloneRun) {
+//                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+//                java.srcDirs = ['src/main/java', 'src/main/debug/java']
+//                res.srcDirs = ['src/main/res', 'src/main/debug/res']
+//                aidl.srcDirs = ['src/main/java', 'src/main/debug/java']
+//                assets.srcDirs = ['src/main/assets', 'src/main/debug/assets']
+//            } else {
+//                java.srcDirs = ['src/main/java']
+//                aidl.srcDirs = ['src/main/java']
+//                res.srcDirs = ['src/main/res']
+//                assets.srcDirs = ['src/main/assets']
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//            }
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':common')
+    kapt rootProject.ext.dependencies.arouterCompiler
+}
+repositories {
+    mavenCentral()
+}

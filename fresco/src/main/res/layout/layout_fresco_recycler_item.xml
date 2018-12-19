@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    card_view:cardCornerRadius="8dp"
+                                    card_view:cardElevation="2dp">
+
+    <com.soybean.framework.imageloader.FrescoImageView android:id="@+id/frescoImageView"
+                                                       xmlns:android="http://schemas.android.com/apk/res/android"
+                                                       xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="200dp"
+                                                       fresco:actualImageScaleType="centerCrop"
+                                                       fresco:fadeDuration="300"
+                                                       fresco:failureImageScaleType="centerCrop"
+                                                       fresco:placeholderImage="@drawable/default_image_background"
+                                                       fresco:placeholderImageScaleType="centerCrop"
+                                                       fresco:pressedStateOverlayImage="@color/fresco_press_overly_color"
+                                                       fresco:progressBarAutoRotateInterval="1000"
+                                                       fresco:progressBarImageScaleType="centerCrop"
+                                                       fresco:retryImageScaleType="centerCrop"
+        />
+</android.support.v7.widget.CardView>
+

@@ -1,0 +1,2 @@
+include  ':fresco', ':common'
+project(':common').projectDir = new File("../Common/common/")
